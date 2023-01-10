@@ -10,7 +10,7 @@ class PeliculaComparer : IComparer<listaPeliculas>
     public int Compare(listaPeliculas x, listaPeliculas y)
     {
         int result = 0;
-        if (campo == "nombrePelicula")
+        if (campo == "nombre")
         {
             result = x.nombrePelicula.CompareTo(y.nombrePelicula);
         }
@@ -21,6 +21,8 @@ class PeliculaComparer : IComparer<listaPeliculas>
         else if (campo == "genero")
         {
             result = x.genero.CompareTo(y.genero);
+        }else if(campo=="calificacion"){
+            result = y.calificacion.CompareTo(x.calificacion);
         }
         return result;
     }

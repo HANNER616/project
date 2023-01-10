@@ -1,12 +1,12 @@
-1,Jumper,2008,6.1,Ciencia ficcion/Accion,Disponible
-2,El precio del mañana,2011,6.7,Ciencia ficcion/Accion,Disponible
-3,Cherry,2021,7,Drama/Crimen,Disponible
-4,Cube,1997,7,Ciencia ficción/Terror,Disponible
-5,Sector9,2009,6.8,Ciencia ficción,Disponible
-6,Logan,2017,6.9,Ciencia ficcion/Accion,Disponible
-7,Finch,2021,6.9,Ciencia ficción/Drama,Disponible
-8,Tusk,2014,5,Terror/Comedia,Disponible
-9,Dead Silence,2007,6.1,Terror/Suspenso,Disponible
-10,Guerra mundial Z,2013,6.1,Terror/Acción,Disponible
+1,Jumper,2008,6.1,Ciencia ficcion,Disponible
+2,El precio del mañana,2011,6.7,Accion,Disponible
+3,Cherry,2021,7,Drama,Disponible
+4,Cube,1997,7,Terror,Disponible
+5,Sector9,2009,6.8,Ciencia ficcion,Disponible
+6,Logan,2017,6.9,Accion,Disponible
+7,Finch,2021,6.9,Drama,Disponible
+8,Tusk,2014,5,Comedia,Disponible
+9,Dead Silence,2007,6.1,Terror,Disponible
+10,Guerra mundial Z,2013,6.1,Accion,Disponible
 
 

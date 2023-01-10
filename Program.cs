@@ -8,6 +8,7 @@ class Program
     {
         string[][] matrizPeliculas = new string[10][];
         List<listaPeliculas> listPeliculas = new List<listaPeliculas>();
+        Queue<int> colaPeliculasSeleccionadas = new Queue<int>();
 
 
         using (StreamReader reader = new StreamReader("peliculas.txt"))
@@ -54,62 +55,7 @@ class Program
         imprimirLista(listPeliculas);
 
         //Menu consola
-        menu(listPeliculas);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        menu(listPeliculas, colaPeliculasSeleccionadas);
 
 
     }
@@ -254,7 +200,7 @@ class Program
 
     }
 
-    public static void imprimirPrimerasPeliculasNumeroPersonalizado(List<listaPeliculas> movies , int numeroFilas)
+    public static void imprimirPrimerasPeliculasNumeroPersonalizado(List<listaPeliculas> movies, int numeroFilas)
     {
         int contador = 0;
         foreach (listaPeliculas pelicula in movies)
@@ -268,13 +214,7 @@ class Program
 
         }
 
-
-
-
-
     }
-
-
 
 
 
@@ -289,10 +229,45 @@ class Program
             }
         }
         return -1;
+    }
+
+    public static void seleccionarPeliculas(short idPelicula, List<listaPeliculas> lista, Queue<int> cola)
+    {
+
+        if(idPelicula!=0){
+           cola.Enqueue(idPelicula);
+
+        for (int i = 0; i < lista.Count; i++)
+        {
+            if (lista[i].idPelicula.CompareTo(idPelicula) == 0)
+            {
+                lista[i].setEstado("Alquilado");
+
+            }
+        } 
+        }
+        
 
     }
 
-    private static void menu(List<listaPeliculas> movies)
+    public static void imprimirCola(Queue<int> cola)
+    {
+        Console.WriteLine("");
+        Console.Write("[");
+        while (cola.Count > 0)
+        {
+            int elemento = cola.Dequeue();
+            Console.Write(elemento + " ");
+        }
+
+        Console.WriteLine("]");
+    }
+
+
+
+
+
+    private static void menu(List<listaPeliculas> movies, Queue<int> cola)
     {
         while (true)
         {
@@ -386,33 +361,33 @@ class Program
 
                         string campo = "calificacion";
                         ordenarPor(campo, movies);
-                        imprimirPrimerasPeliculasNumeroPersonalizado(movies,10);
+                        imprimirPrimerasPeliculasNumeroPersonalizado(movies, 10);
                         break;
                     }
                 case "11":
                     {
-                        
-
-
+                        short id = 1;
+                        short count = 0;
+                        Console.WriteLine("Ingrese las peliculas a alquilar (5 maximo) , para terminar de seleccionar ingrese '0' .");
+                        while (id != 0 && count != 5)
+                        {
+                            id = short.Parse(Console.ReadLine());
+                            seleccionarPeliculas(id, movies, cola);
+                            count++;
+                        }
+                        imprimirLista(movies);
+                        imprimirCola(cola);
                         break;
                     }
                 default:
                     {
-                        Console.WriteLine("Opción inválida");
-                        break;
+                        Console.WriteLine("GG WP!");
+                        return;
                     }
             }
 
         }
     }
-
-
-
-
-
-
-
-
 
 
 

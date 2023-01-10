@@ -1,7 +1,7 @@
 public class listaPeliculas
 {
     // Atributos de la clase
-    private short idPelicula;
+    public short idPelicula;
     public string nombrePelicula;
     public short year;
     public double calificacion;

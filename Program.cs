@@ -318,7 +318,26 @@ class Program
                     }
                 case "5":
                     {
-                        Console.WriteLine("ESTA ES LA OPCION 5");
+                        Console.WriteLine("\n\ningrese el id:");
+                        short id = short.Parse(Console.ReadLine());
+                        Console.WriteLine("ingrese el nombre:");
+                        string nombre = Console.ReadLine();
+                        Console.WriteLine("ingrese el año:");
+                        short año = short.Parse(Console.ReadLine());
+                        Console.WriteLine("ingrese la calificacion:");
+                        double calificación = double.Parse(Console.ReadLine());
+                        Console.WriteLine("ingrese el genero:");
+                        string genero = Console.ReadLine();
+                        Console.WriteLine("ingrese el estado:");
+                        string estado = Console.ReadLine();
+
+                        listaPeliculas addPeli = new listaPeliculas(id, nombre, año, calificación, genero, estado);
+        //listPeliculas.Add(addPeli);
+                        listPeliculas.Insert(listPeliculas.Count, addPeli);
+
+                        recorrerMatriz(matrizPeliculas, listPeliculas);
+                        Console.WriteLine("\n\n");
+                        imprimirLista(listPeliculas);
                         break;
                     }
                 case "6":

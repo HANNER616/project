@@ -332,12 +332,10 @@ class Program
                         string estado = Console.ReadLine();
 
                         listaPeliculas addPeli = new listaPeliculas(id, nombre, año, calificación, genero, estado);
-        //listPeliculas.Add(addPeli);
-                        listPeliculas.Insert(listPeliculas.Count, addPeli);
-
-                        recorrerMatriz(matrizPeliculas, listPeliculas);
+                        movies.Add(addPeli);
+                    
                         Console.WriteLine("\n\n");
-                        imprimirLista(listPeliculas);
+                        imprimirLista(movies);
                         break;
                     }
                 case "6":

@@ -230,6 +230,22 @@ class Program
         }
         return -1;
     }
+    
+    public static int eliminarPelicula(string nombrePelicula, List<listaPeliculas> movies)
+    {
+        for (int i = 0; i < movies.Count; i++)
+        {
+            if (movies[i].nombrePelicula==(nombrePelicula) )
+            {
+                Console.WriteLine("se elimino");
+                Console.WriteLine(movies[i]);
+                movies.Remove(movies[i]);
+                return i;
+            }
+        }
+        return -1;
+                       Console.WriteLine("no se elimino");
+    }
 
     public static void seleccionarPeliculas(short idPelicula, List<listaPeliculas> lista, Queue<int> cola)
     {
@@ -340,7 +356,9 @@ class Program
                     }
                 case "6":
                     {
-                        Console.WriteLine("ESTA ES LA OPCION 6");
+                        Console.WriteLine("Ingrese el nompre de la pelicula a eliminar:");
+                        string eliminar=Console.ReadLine();
+                        eliminarPelicula(eliminar,movies);
                         break;
                     }
                 case "7":
